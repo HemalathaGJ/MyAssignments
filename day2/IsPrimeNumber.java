@@ -9,19 +9,27 @@ public class IsPrimeNumber {
 		System.out.println("Enter the number greater then 2 to check if it is Prime or not");
 		Scanner num = new Scanner(System.in);
 		int n = num.nextInt();
+		int flg = 0;
+		boolean prime = true;
 
 		for (int i = 2; i < n; i++) {
-		
+			if (i != n) {
 				if (n % i == 0) {
+					// System.out.println("The number" + " " + n + " is not Prime");
+
 					System.out.println("The number" + " " + n + " is not Prime");
+					prime = false;
 					break;
-				} else {
-					System.out.println("The number" + " " + n + " is Prime");
-					break;
-				}
+
+				} else
+					continue;
 
 			}
 		}
+		if (prime) {
+			System.out.println("The number" + " " + n + " is Prime");
+		}
+
 	}
 
-
+}
