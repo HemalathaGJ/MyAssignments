@@ -21,22 +21,24 @@ public class ProjectSpecificMethod {
 
     			// Launch the browser
     			driver = new ChromeDriver(options);
-
-    			
+				// Maximizing browser window
     			driver.manage().window().maximize();
-    			
+    			// Loading the url which is passed as the parameter p1
     			driver.get(p1);
+				// adding implicit wait to ensure all the web page contents are loaded
     			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
-    			
+    			// Entering username and password which were passed as parameters p2 and p3 respectively
     			driver.findElement(By.id("username")).sendKeys(p2);
     			driver.findElement(By.id("password")).sendKeys(p3);
+				// clicking the Login button
     			driver.findElement(By.xpath("//div[@id='theloginform']//input[@id='Login']")).click();
 
 	}
     @AfterMethod
     public void postcondition() {
-		//driver.close();
+		driver.close();
 
 	}
 
 }
+
